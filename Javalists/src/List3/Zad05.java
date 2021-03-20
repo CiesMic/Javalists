@@ -33,7 +33,7 @@ public class Zad05 {
 	}
 
 	private static void daneUzytkownika(int rok) {
-		System.out.println("Rok urodzenia: " + (2021 - rok) + " roku");
+		System.out.println("Rok urodzenia: " + (2021 - rok));
 	}
 
 	private static void daneUzytkownika(String imie, String nazwisko) {
