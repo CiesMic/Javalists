@@ -16,7 +16,7 @@ public class Zad02 {
 		
 		sc.close();
 		
-		for (int i = 0; i < longslowo.length(); i++) {
+		for (int i = 0; i < longslowo.length() - shor.length() + 1; i++) {
 			if (longslowo.charAt(i) == shor.charAt(0)) {
 				if (shor.equals(longslowo.substring(i, i + shor.length()))) {
 					System.out.println("Jest pozbiorem");
