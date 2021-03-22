@@ -54,6 +54,28 @@ public class Zad05 {
 
 	private static void daneUzytkownika(String pesel) {
 		System.out.println("Twoj PESEL: " + pesel);
+		
+		System.out.println("Data: " + pesel.substring(4,6));
+		
+		if (Integer.valueOf(pesel.substring(0, 2)) <= 21)
+		{
+			System.out.println("Miesi¹c: " + (Integer.valueOf(pesel.substring(2, 4)) - 20));
+		}
+		else System.out.println("Miesi¹c: " + pesel.substring(2, 4));
+		
+		if (Integer.valueOf(pesel.substring(0, 2)) <= 21)
+		{
+			System.out.println("Rok urodzenia: 20" + pesel.substring(0, 2));
+		}
+		else System.out.println("Rok urodzenia: 19" + pesel.substring(0, 2));
+		
+		if (pesel.charAt(9) % 2 == 0)
+		{
+			System.out.println("P³eæ: Kobieta");
+		}
+		else System.out.println("P³eæ: Mêzczyzna");
+		
+		System.out.println("Cyfra kontrolna: " + pesel.charAt(10));
 	}
 
 }
