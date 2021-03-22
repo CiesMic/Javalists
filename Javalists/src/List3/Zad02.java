@@ -24,8 +24,6 @@ public class Zad02 {
 				}
 			}
 		}
-	
-
 		System.out.println("Nie jest pozbiorem");
 	}
 

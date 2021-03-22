@@ -18,11 +18,15 @@ public class Zad05 {
 			daneUzytkownika(Integer.valueOf(dane));
 		} else if (dane.contains(".")) {
 			String[] dataUrodzenia = dane.split("\\.");
+			if (dataUrodzenia.length == 3)
+			{
 			daneUzytkownika(dataUrodzenia);
+			}
+			else System.out.println("B³êdny format dat");
 		} else if (dane.length() == 11) {
 			daneUzytkownika(dane);
 		} else {
-			String[] ImieNazwisko = dane.split("\\ ");
+			String[] ImieNazwisko = dane.split(" ");
 			if (ImieNazwisko.length == 2) {
 				daneUzytkownika(ImieNazwisko[0], ImieNazwisko[1]);
 			} else if (ImieNazwisko.length == 3) {
@@ -48,8 +52,8 @@ public class Zad05 {
 		System.out.println("Urodzi³eœ/aœ siê w " + dane[0] + "." + dane[1] + "." + dane[2]);
 	}
 
-	private static void daneUzytkownika(String dane) {
-		System.out.println("Twoj PESEL: " + dane);
+	private static void daneUzytkownika(String pesel) {
+		System.out.println("Twoj PESEL: " + pesel);
 	}
 
 }
