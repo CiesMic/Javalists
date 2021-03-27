@@ -27,6 +27,8 @@ public class Zad03 {
 		
 		System.out.print(Math.abs(d1.getTime() - d2.getTime()) /(1000*60*60*24));
 		
+		sc.close();
+		
 	}
 
 }
