@@ -49,7 +49,9 @@ public class Zad05 {
 	}
 
 	private static void daneUzytkownika(String[] dane) {
-		System.out.println("Urodzi³eœ/aœ siê w " + dane[0] + "." + dane[1] + "." + dane[2]);
+		
+		String miesiac[] = {"stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "wrzesnia", "pazdziernika", "listopada", "grudnia"};
+		System.out.println("Urodzi³eœ/aœ siê w " + dane[0] + " " + miesiac[Integer.valueOf(dane[1]) - 1] + " " + dane[2] + "roku");
 	}
 
 	private static void daneUzytkownika(String pesel) {
