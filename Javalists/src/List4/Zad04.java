@@ -13,7 +13,7 @@ public class Zad04 {
 
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Podaj datê i godzinê (wg formatu dd.MM.yyyy hh:mm:ss");
+		System.out.println("Podaj datê i godzinê (wg formatu dd.MM.yyyy");
 		
 		String prz = sc.nextLine();
 		
@@ -22,7 +22,7 @@ public class Zad04 {
 		
 		SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
 		
-		Date date = format.parse(prz);
+		Date date = format.parse(prz + " 09:03:00");
 		System.out.println(timeZone.getRawOffset()/(1000*60*60));
 		System.out.println(timeZone2.getRawOffset()/(1000*60*60));
 		System.out.println(timeZone.getDSTSavings()/(1000*60*60));
