@@ -20,6 +20,8 @@ public class Zad03 {
 		
 		Date d1, d2;
 		
+		try
+		{
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 		
 		d1 = sdf.parse(data1);
@@ -28,6 +30,11 @@ public class Zad03 {
 		System.out.print(Math.abs(d1.getTime() - d2.getTime()) /(1000*60*60*24));
 		
 		sc.close();
+		}
+		catch(ParseException e)
+		{
+			System.out.print("Wrong format");
+		}
 		
 	}
 
