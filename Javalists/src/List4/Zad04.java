@@ -19,7 +19,7 @@ public class Zad04 {
 		
 		sc.close();
 		
-		TimeZone timeZone = TimeZone.getTimeZone("Europe/Warsaw");
+		TimeZone timeZone = TimeZone.getTimeZone("Asia/Tokyo");
 		TimeZone timeZone2 = TimeZone.getTimeZone("America/Puerto_Rico");
 		
 		SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
@@ -44,8 +44,8 @@ public class Zad04 {
 			d2+=(timeZone2.getDSTSavings()/(1000*60*60));
 		}
 		
-		System.out.println("Warsaw: " + d1);
-		System.out.println("Toronto: " + d2);
+		System.out.println("First City: " + d1);
+		System.out.println("Second City: " + d2);
 		System.out.println("Ró¿nica: " + (Math.abs(d1) + Math.abs(d2)));
 	}
 }
