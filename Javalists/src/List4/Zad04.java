@@ -19,12 +19,16 @@ public class Zad04 {
 		
 		sc.close();
 		
+		try
+		{
+		
 		TimeZone timeZone = TimeZone.getTimeZone("Asia/Tokyo");
 		TimeZone timeZone2 = TimeZone.getTimeZone("America/Puerto_Rico");
 		
 		SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
 		
 		Date date = format.parse(prz + " 09:03:00");
+		
 		System.out.println(timeZone.getRawOffset()/(1000*60*60));
 		System.out.println(timeZone2.getRawOffset()/(1000*60*60));
 		System.out.println(timeZone.getDSTSavings()/(1000*60*60));
@@ -47,5 +51,10 @@ public class Zad04 {
 		System.out.println("First City: " + d1);
 		System.out.println("Second City: " + d2);
 		System.out.println("Ró¿nica: " + (Math.abs(d1) + Math.abs(d2)));
+		}
+		catch(ParseException e)
+		{
+			System.out.println("Wrong format");
+		}
 	}
 }
