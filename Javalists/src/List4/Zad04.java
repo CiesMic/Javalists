@@ -17,6 +17,8 @@ public class Zad04 {
 		
 		String prz = sc.nextLine();
 		
+		sc.close();
+		
 		TimeZone timeZone = TimeZone.getTimeZone("Europe/Warsaw");
 		TimeZone timeZone2 = TimeZone.getTimeZone("America/Puerto_Rico");
 		
