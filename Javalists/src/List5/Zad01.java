@@ -20,33 +20,6 @@ public class Zad01 {
 		
 		for(int i=1; i<=n; i++)
 		{
-			if (i==1)
-			{
-				for(int z = length(1, i); z < len; z++)
-				{
-					System.out.print(" ");
-				}
-				if (!is_zero)
-				{
-					System.out.print("0");
-					is_zero = true;
-				}
-				else System.out.print(i);
-				for(int j=1; j<=n; j++)
-				{
-					for(int k = length(j,i); k<len; k++)
-					{
-						System.out.print(" ");
-					}
-					System.out.print(i*j + " ");
-				}
-				System.out.println();
-			}
-			for(int z = length(1, i); z < len; z++)
-			{
-				System.out.print(" ");
-			}
-			System.out.print(i);
 			for(int j=1; j<=n; j++)
 			{
 				for(int k = length(j,i); k<len; k++)
