@@ -20,14 +20,14 @@ public class Zad03 {
 		Scanner sc = new Scanner(System.in);
 
 		boolean is_Duplicate;
-		while (true) {
+		while (listdate.size() < 4) {
 			try {
 				is_Duplicate = false;
 				System.out.println("Podaj date wg formatu dd.MM.yyyy");
 				data = sdf.parse(sc.next());
 				if (listdate.size() < 4 & listdate.size() > 0) {
 					for (int i = 0; i < listdate.size(); i++) {
-						if (((Date) listdate.get(i)).equals(data)) {
+						if (((Date) listdate.get(i)).equals(data) & !is_Duplicate) {
 							is_Duplicate = true;
 						}
 					}
@@ -42,12 +42,12 @@ public class Zad03 {
 					listdate.add(data);
 				} else if (listdate.size() > 3) {
 					System.out.println("Is Full");
-					break;
 				}
 			} catch (ParseException e) {
 				System.out.println("Wrong format");
 			}
 		}
+		sc.close();
 	}
 
 }

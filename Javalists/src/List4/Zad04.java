@@ -23,18 +23,11 @@ public class Zad04 {
 		{
 		
 		TimeZone timeZone = TimeZone.getTimeZone("Asia/Tokyo");
-		TimeZone timeZone2 = TimeZone.getTimeZone("America/Puerto_Rico");
+		TimeZone timeZone2 = TimeZone.getTimeZone("Europe/Moscow");
 		
 		SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
 		
 		Date date = format.parse(prz + " 09:03:00");
-		
-		System.out.println(timeZone.getRawOffset()/(1000*60*60));
-		System.out.println(timeZone2.getRawOffset()/(1000*60*60));
-		System.out.println(timeZone.getDSTSavings()/(1000*60*60));
-		System.out.println(timeZone2.getDSTSavings()/(1000*60*60));
-		System.out.println(timeZone.inDaylightTime(date));
-		System.out.println(timeZone2.inDaylightTime(date));
 		
 		long d1 = (timeZone.getRawOffset()/(1000*60*60));
 		long d2 = (timeZone2.getRawOffset()/(1000*60*60));
@@ -50,7 +43,7 @@ public class Zad04 {
 		
 		System.out.println("First City: " + d1);
 		System.out.println("Second City: " + d2);
-		System.out.println("Ró¿nica: " + (Math.abs(d1) + Math.abs(d2)));
+		System.out.println("Differences: " + (Math.abs(d1) + Math.abs(d2)));
 		}
 		catch(ParseException e)
 		{
