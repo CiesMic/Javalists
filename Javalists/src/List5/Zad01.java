@@ -5,14 +5,11 @@ import java.util.Scanner;
 public class Zad01 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Wprowadz n: ");
 		
 		int n = sc.nextInt();
-		
-		boolean is_zero = false;
 		
 		sc.close();
 		
@@ -34,6 +31,6 @@ public class Zad01 {
 	
 	private static Integer length(int l, int j)
 	{
-		return (int)(Math.log10(l*j)+1);
+		return (int)(Math.log10(l*j));
 	}
 }
