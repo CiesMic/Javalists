@@ -1,21 +1,17 @@
 package List7;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import java.awt.FlowLayout;
 import javax.swing.JTextField;
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Zad03 extends JFrame implements ActionListener {
 	
+	private static final long serialVersionUID = 1L;
 	private JTextField dane;
 	private JButton numer1;
 	private JButton numer2;
@@ -33,48 +29,25 @@ public class Zad03 extends JFrame implements ActionListener {
 	private JButton dzielenie;
 	private JButton result;
 	
+	private String Znak="", Wynik="";
+	private double Liczba;
+	
 	public static void main(String[] args) {
 		
 		Zad03 app = new Zad03();
-	}
-	
-	private int a;
-	private int b;
-	private char znak;
-	
-	private double znakrownania()
-	{
-		switch(znak)
-		{
-		case '+':
-			return a+b;
-		case '-':
-			return a-b;
-		case '*':
-			return a*b;
-		case '/':
-			if(a != 0)
-			{
-				return a/b;
-			}
-			else
-			{
-				return 0;
-			}
-		default:
-			return -1;
-		}
+		app.setVisible(true);
+		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	public Zad03() {
-		setSize(350,400);
+		setSize(200,250);
 		setTitle("Zad 3: Kalkulator");
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
 		c.fill = GridBagConstraints.BOTH;
 		c.gridwidth = 4;
-		c.ipady=80;
+		c.ipady=90;
 		c.gridheight = 1;
 		c.gridx = 0;
 		c.gridy = 0;
@@ -89,7 +62,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		c.gridwidth = 1;
 		c.ipady = 0;
 		c.ipadx = 0;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 0;
 		c.gridy = 3;
 		numer1.addActionListener(this);
@@ -97,7 +70,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		numer2 = new JButton("2");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 1;
 		c.gridy = 3;
 		numer2.addActionListener(this);
@@ -105,7 +78,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		numer3 = new JButton("3");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 2;
 		c.gridy = 3;
 		numer3.addActionListener(this);
@@ -113,7 +86,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		numer4 = new JButton("4");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 0;
 		c.gridy = 2;
 		numer4.addActionListener(this);
@@ -121,7 +94,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		numer5 = new JButton("5");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 1;
 		c.gridy = 2;
 		numer5.addActionListener(this);
@@ -129,7 +102,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		numer6 = new JButton("6");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 2;
 		c.gridy = 2;
 		numer6.addActionListener(this);
@@ -137,7 +110,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		numer7 = new JButton("7");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 0;
 		c.gridy = 1;
 		numer7.addActionListener(this);
@@ -145,7 +118,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		numer8 = new JButton("8");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 1;
 		c.gridy = 1;
 		numer8.addActionListener(this);
@@ -153,7 +126,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		numer9 = new JButton("9");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 2;
 		c.gridy = 1;
 		numer9.addActionListener(this);
@@ -161,7 +134,7 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		numer0 = new JButton("0");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 1;
 		c.gridy = 4;
 		numer0.addActionListener(this);
@@ -169,66 +142,68 @@ public class Zad03 extends JFrame implements ActionListener {
 		
 		dodawanie = new JButton("+");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 3;
 		c.gridy = 3;
+		dodawanie.addActionListener(this);
 		add(dodawanie, c);
 		
 		odejmowanie = new JButton("-");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 3;
 		c.gridy = 2;
+		odejmowanie.addActionListener(this);
 		add(odejmowanie, c);
 		
 		mnozenie = new JButton("*");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 3;
 		c.gridy = 1;
+		mnozenie.addActionListener(this);
 		add(mnozenie, c);
 		
 		result = new JButton("=");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 3;
 		c.gridy = 4;
+		result.addActionListener(this);
 		add(result, c);
 		
 		dzielenie = new JButton("/");
 		c.weightx = 0.5;
-		c.fill = GridBagConstraints.HORIZONTAL;
+		c.fill = GridBagConstraints.BOTH;
 		c.gridx = 2;
 		c.gridy = 4;
 		add(dzielenie, c);
-		
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		String command = ((JButton) e.getSource()).getText();
-		if(command.equals("+") || command.equals("-") || command.equals("*") || command.equals("/"))
-		{
-			znak = command.charAt(0);
-		}
-		else if (command.equals("="))
-		{
-			
-		}
-		else 
-		{
-			Integer zm = changeFromIntToString(dane.getText(), command);
-			dane.setText(String.valueOf(zm));
-		}
 	}
 	
-	public int changeFromIntToString(String numer, String numer2)
-	{
-		String n = numer + numer2;
-		int m = Integer.valueOf(n);
-		return m;
-	}
-
+	public void actionPerformed(ActionEvent e) {
+        String command = ((JButton) e.getSource()).getText();
+        if (command.charAt(0) >='0' & command.charAt(0) <='9')
+        {
+            Wynik = dane.getText() + command;
+            dane.setText(Wynik);
+        } else {
+            if (Znak == "")
+                Liczba = Double.parseDouble(dane.getText());
+            if (Znak == "+")
+                Liczba = Liczba + Integer.parseInt(dane.getText());
+            else if (Znak == "-")
+                Liczba = Liczba - Integer.parseInt(dane.getText());
+            else if (Znak == "/")
+                Liczba = Liczba / Integer.parseInt(dane.getText());
+            else if (Znak == "*")
+                Liczba = Liczba * Integer.parseInt(dane.getText());
+            Znak = command;
+            dane.setText("");
+            if (Znak == "=") {
+                dane.setText("" + Liczba);
+                Liczba = (double) 0;
+                Znak = "";
+            }
+        }
+    }
 }

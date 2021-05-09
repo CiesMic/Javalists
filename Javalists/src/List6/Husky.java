@@ -19,6 +19,7 @@ public class Husky extends Pies{
 	
 	public Husky(String imie, int wiek, int ile_konczyn, boolean zyje, int maxwiek, String rasa){
 		super(imie,wiek,ile_konczyn,zyje);
+		//this();
 		this.maxwiek = maxwiek;
 		this.rasa = rasa;
 	}
