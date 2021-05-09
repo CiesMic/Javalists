@@ -30,7 +30,7 @@ public class Zad03 extends JFrame implements ActionListener {
 	private JButton result;
 	
 	private String Znak="", Wynik="";
-	private double Liczba;
+	private double pamiec;
 	
 	public static void main(String[] args) {
 		
@@ -188,20 +188,20 @@ public class Zad03 extends JFrame implements ActionListener {
             dane.setText(Wynik);
         } else {
             if (Znak == "")
-                Liczba = Double.parseDouble(dane.getText());
+                pamiec = Double.parseDouble(dane.getText());
             if (Znak == "+")
-                Liczba = Liczba + Integer.parseInt(dane.getText());
+                pamiec = pamiec + Integer.parseInt(dane.getText());
             else if (Znak == "-")
-                Liczba = Liczba - Integer.parseInt(dane.getText());
+                pamiec = pamiec - Integer.parseInt(dane.getText());
             else if (Znak == "/")
-                Liczba = Liczba / Integer.parseInt(dane.getText());
+                pamiec = pamiec / Integer.parseInt(dane.getText());
             else if (Znak == "*")
-                Liczba = Liczba * Integer.parseInt(dane.getText());
+                pamiec = pamiec * Integer.parseInt(dane.getText());
             Znak = command;
             dane.setText("");
             if (Znak == "=") {
-                dane.setText("" + Liczba);
-                Liczba = (double) 0;
+                dane.setText("" + pamiec);
+                pamiec = (double) 0;
                 Znak = "";
             }
         }
