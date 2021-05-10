@@ -201,11 +201,11 @@ public class Zad04 implements ActionListener {
 			result.append("Surname: " + txtSurname.getText() + "\n");
 
 			String pesel = txtPesel.getText();
-
+			String miesiac[] = {"styczen", "luty", "marzec", "kwiecien", "maj", "czerwiec", "lipiec", "sierpien", "wrzesien", "pazdziernik", "listopad", "grudzien"};
 			if (Integer.valueOf(pesel.substring(0, 2)) <= 21) {
 				if (Integer.valueOf(pesel.substring(2, 4)) - 20 <= 12 & Integer.valueOf(pesel.substring(2, 4)) - 20 > 0) {
 					result.append("Rok urodzenia: 20" + pesel.substring(0, 2) + "\n");
-					result.append("Miesi¹c: " + (Integer.valueOf(pesel.substring(2, 4)) - 20) + "\n");
+					result.append("Miesi¹c: " + miesiac[Integer.valueOf(pesel.substring(2, 4)) - 21] + "\n");
 					result.append("Data: " + pesel.substring(4, 6) + "\n");
 					if (pesel.charAt(9) % 2 == 0) {
 						result.append("P³eæ: Kobieta \n");
@@ -221,7 +221,7 @@ public class Zad04 implements ActionListener {
 			} else {
 				if (Integer.valueOf(pesel.substring(2, 4)) <= 12 & Integer.valueOf(pesel.substring(2, 4)) > 0) {
 					result.append("Rok urodzenia: 19" + pesel.substring(0, 2) + "\n");
-					result.append("Miesi¹c: " + pesel.substring(2, 4) + "\n");
+					result.append("Miesi¹c: " + miesiac[Integer.valueOf(pesel.substring(2, 4)) - 1] + "\n");
 					result.append("Data: " + pesel.substring(4, 6) + "\n");
 					if (pesel.charAt(9) % 2 == 0) {
 						result.append("P³eæ: Kobieta \n");
