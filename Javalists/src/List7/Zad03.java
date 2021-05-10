@@ -40,7 +40,7 @@ public class Zad03 extends JFrame implements ActionListener {
 	}
 
 	public Zad03() {
-		setSize(200, 250);
+		setSize(300, 450);
 		setTitle("Zad 3: Kalkulator");
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
@@ -187,21 +187,32 @@ public class Zad03 extends JFrame implements ActionListener {
 			Wynik = dane.getText() + command;
 			dane.setText(Wynik);
 		} else {
-			if (Znak == "")
+			switch (Znak) {
+			case "":
 				pamiec = Double.parseDouble(dane.getText());
-			if (Znak == "+")
+				break;
+			case "+":
 				pamiec = pamiec + Integer.parseInt(dane.getText());
-			else if (Znak == "-")
+				break;
+			case "-":
 				pamiec = pamiec - Integer.parseInt(dane.getText());
-			else if (Znak == "/")
-			{
-				if (pamiec == 0)
-				{
-					pamiec = 0;
-				} else pamiec = pamiec / Integer.parseInt(dane.getText());
-			}
-			else if (Znak == "*")
+				break;
+			case "*":
 				pamiec = pamiec * Integer.parseInt(dane.getText());
+			case "/":
+				if (pamiec == 0) {
+					pamiec = 0;
+				} else
+					pamiec = pamiec / Integer.parseInt(dane.getText());
+				break;
+			case "=":
+				dane.setText("" + pamiec);
+				pamiec = (double) 0;
+				Znak = "";
+				break;
+			default:
+				pamiec = 0;
+			}
 			Znak = command;
 			dane.setText("");
 			if (Znak == "=") {

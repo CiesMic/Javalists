@@ -186,8 +186,8 @@ public class Zad04 implements ActionListener {
 		frame.getContentPane().add(btnNewButton);
 
 		result = new JTextArea();
-		result.setEditable(false);
 		result.setLineWrap(true);
+		result.setEditable(false);
 		result.setBounds(10, 133, 227, 253);
 		frame.getContentPane().add(result);
 	}
