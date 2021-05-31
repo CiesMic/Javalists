@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <top>
+      <AnchorPane prefHeight="139.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="97.0" layoutY="61.0" mnemonicParsing="false" onAction="#Uruchom_watek" text="Z watkiem" />
+            <Button layoutX="435.0" layoutY="61.0" mnemonicParsing="false" onAction="#Uruchom_bezwatku" text="Bez watku" />
+            <ProgressBar fx:id="watekbar" layoutX="33.0" layoutY="98.0" prefWidth="200.0" progress="0.0" />
+            <ProgressBar fx:id="watekbezbar" layoutX="370.0" layoutY="98.0" prefWidth="200.0" progress="0.0" />
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="259.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="txtbezwatku" editable="false" layoutX="361.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+            <TextArea fx:id="txtwatek" editable="false" layoutX="29.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

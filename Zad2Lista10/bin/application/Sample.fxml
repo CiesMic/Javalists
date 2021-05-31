@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <bottom>
+      <AnchorPane prefHeight="126.0" prefWidth="370.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="result1" editable="false" layoutX="14.0" layoutY="11.0" prefHeight="121.0" prefWidth="159.0" wrapText="true" />
+            <TextArea fx:id="result2" editable="false" layoutX="197.0" layoutY="11.0" prefHeight="121.0" prefWidth="159.0" wrapText="true" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="42.0" prefWidth="370.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="136.0" layoutY="32.0" prefHeight="17.0" prefWidth="99.0" text="Wypisywanie liczb" />
+            <Button layoutX="153.0" layoutY="64.0" mnemonicParsing="false" onAction="#Click" text="Uruchom" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
